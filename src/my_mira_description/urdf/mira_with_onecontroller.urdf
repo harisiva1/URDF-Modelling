@@ -1,0 +1,63 @@
+    <gazebo>
+        <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+            <robotNamespace>/mira</robotNamespace>
+        </plugin>
+    </gazebo>
+    
+    <joint name="roll_joint" type="revolute">
+    	<parent link="base_link"/>
+    	<child link="roll_M1_link"/>
+        <origin xyz="0.0023 0 -0.0005" rpy="0 0 0"/>
+        <limit lower="-0.2" upper="0.2" effort="0.1" velocity="0.005"/>
+        <axis xyz="1 0 0"/>
+	</joint>
+
+    <transmission name="tran1">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="roll_joint">
+            <hardwareInterface>EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="motor1">
+            <hardwareInterface>EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+    <joint name="pitch_joint" type="revolute">
+    	<parent link="roll_M1_link"/>
+    	<child link="pitch_M2_link"/>
+    	<origin xyz="0 0 0" rpy="0 -1.5708 0"/>
+        <limit lower="0" upper="0.44" effort="0.1" velocity="0.005"/>
+        <axis xyz="0 1 0"/>
+	</joint>
+
+    <transmission name="tran2">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="pitch_joint">
+            <hardwareInterface>EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="motor2">
+            <hardwareInterface>EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+    <joint name="yaw_joint" type="continuous">
+    	<parent link="pitch_M2_link"/>
+    	<child link="yaw_M3_link"/>
+        <origin xyz="0.01 0 0" rpy="0 1.5708 0"/>
+        <limit effort="0.1" velocity="0.01"/>
+        <axis xyz="0 0 1"/>
+	</joint>
+
+    <transmission name="tran3">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="yaw_joint">
+            <hardwareInterface>EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="motor3">
+            <hardwareInterface>EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+

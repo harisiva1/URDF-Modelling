@@ -1,0 +1,6 @@
+Warning: Cannot symlink from /home/user/catkin_ws/devel/.private/my_mira_description/local_setup.sh to existing file /home/user/catkin_ws/devel/./local_setup.sh
+Warning: Source hash: f40f4ae59075dd35990ca8858611946a
+Warning: Dest hash: cf17b531d30c60eab159ab2efe9f19d7
+Linked: (/home/user/catkin_ws/devel/.private/my_mira_description/lib/pkgconfig/my_mira_description.pc, /home/user/catkin_ws/devel/lib/pkgconfig/my_mira_description.pc)
+Linked: (/home/user/catkin_ws/devel/.private/my_mira_description/share/my_mira_description/cmake/my_mira_descriptionConfig-version.cmake, /home/user/catkin_ws/devel/share/my_mira_description/cmake/my_mira_descriptionConfig-version.cmake)
+Linked: (/home/user/catkin_ws/devel/.private/my_mira_description/share/my_mira_description/cmake/my_mira_descriptionConfig.cmake, /home/user/catkin_ws/devel/share/my_mira_description/cmake/my_mira_descriptionConfig.cmake)

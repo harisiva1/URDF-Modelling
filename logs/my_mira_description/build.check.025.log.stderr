@@ -1,0 +1,3 @@
+CMake Error: CMake can not determine linker language for target: inertia_calculator
+CMake Error: Cannot determine link language for target "inertia_calculator".
+make: *** [cmake_check_build_system] Error 1

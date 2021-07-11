@@ -1,0 +1,35 @@
+digraph G {
+node [shape=box];
+"base_link" [label="base_link"];
+"head_link" [label="head_link"];
+"upperleg_M1_link" [label="upperleg_M1_link"];
+"lowerleg_M1_link" [label="lowerleg_M1_link"];
+"footM1_link" [label="footM1_link"];
+"upperleg_M2_link" [label="upperleg_M2_link"];
+"lowerleg_M2_link" [label="lowerleg_M2_link"];
+"footM2_link" [label="footM2_link"];
+"upperleg_M3_link" [label="upperleg_M3_link"];
+"lowerleg_M3_link" [label="lowerleg_M3_link"];
+"footM3_link" [label="footM3_link"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"base_link" -> "first" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"first" -> "head_link"
+"head_link" -> "head_upperlegM1_joint" [label="xyz: -0.02165 -0.0125 -0.008 \nrpy: 3.14159 -0 0.5236"]
+"head_upperlegM1_joint" -> "upperleg_M1_link"
+"upperleg_M1_link" -> "upperlegM1_lowerlegM1_joint" [label="xyz: 0 0.0095 0.06 \nrpy: 0 -0 3.14159"]
+"upperlegM1_lowerlegM1_joint" -> "lowerleg_M1_link"
+"lowerleg_M1_link" -> "basefoot_peg_M1_basefoot_peg_M1_joint_joint" [label="xyz: 0 0 0.06 \nrpy: 0 -0 0"]
+"basefoot_peg_M1_basefoot_peg_M1_joint_joint" -> "footM1_link"
+"head_link" -> "head_upperlegM2_joint" [label="xyz: 0.02165 -0.0125 -0.008 \nrpy: 3.14159 -0 2.618"]
+"head_upperlegM2_joint" -> "upperleg_M2_link"
+"upperleg_M2_link" -> "upperlegM2_lowerlegM2_joint" [label="xyz: 0 0.0095 0.06 \nrpy: 0 -0 3.14159"]
+"upperlegM2_lowerlegM2_joint" -> "lowerleg_M2_link"
+"lowerleg_M2_link" -> "basefoot_peg_M2_basefoot_peg_M2_joint_joint" [label="xyz: 0 0 0.06 \nrpy: 0 -0 0"]
+"basefoot_peg_M2_basefoot_peg_M2_joint_joint" -> "footM2_link"
+"head_link" -> "head_upperlegM3_joint" [label="xyz: 0 0.025 -0.008 \nrpy: 3.14159 -0 -1.5708"]
+"head_upperlegM3_joint" -> "upperleg_M3_link"
+"upperleg_M3_link" -> "upperlegM3_lowerlegM3_joint" [label="xyz: 0 0.0095 0.06 \nrpy: 0 -0 3.14159"]
+"upperlegM3_lowerlegM3_joint" -> "lowerleg_M3_link"
+"lowerleg_M3_link" -> "basefoot_peg_M3_basefoot_peg_M3_joint_joint" [label="xyz: 0 0 0.06 \nrpy: 0 -0 0"]
+"basefoot_peg_M3_basefoot_peg_M3_joint_joint" -> "footM3_link"
+}
